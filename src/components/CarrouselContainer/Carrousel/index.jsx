@@ -10,9 +10,9 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper';
 import MediaCard from '../../MediaCard';
-import img from '/public/img/poster.jpg'
+import img from '/public/img/poster.jpg';
 
-export default function Carrousel({ elements = [] }) {
+export default function Carrousel({ elements = [{}, {}], type }) {
 	return (
 		<>
 			<Swiper
@@ -79,4 +79,10 @@ export default function Carrousel({ elements = [] }) {
 			`}</style>
 		</>
 	);
+}
+
+export async function getServerSideProps(ctx) {
+	return {
+		props: { data }, // will be passed to the page component as props
+	};
 }
