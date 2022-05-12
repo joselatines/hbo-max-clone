@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 	
     body {
-       	background-color: ${({ theme }) => theme.colors.bg};
+       /* 	background-color: ${({ theme }) => theme.colors.bg}; */
        	color: ${({ theme }) => theme.colors.font};
 		font-family: ${({ theme }) =>
 			theme.font
@@ -23,5 +23,9 @@ export const GlobalStyles = createGlobalStyle`
    			font-size: 22px;
 		}
 		// Project styles
+		background: rgb(0,0,0);
+background: linear-gradient(166deg, rgba(0,0,0,1) 66%, rgba(71,19,193,1) 89%, rgba(121,93,255,1) 100%);
+
+
     }
 	`;

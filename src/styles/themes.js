@@ -24,6 +24,7 @@ const font = {
 };
 const transitions = {
 	smoothShort: '0.3s ease-in-out',
+	btn: '0.3s ease',
 };
 
 const mediaQueries = {
@@ -47,6 +48,7 @@ export const darkTheme = {
 	transitions,
 	mediaQueries,
 };
+
 
 export const lightTheme = {
 	colors: {

@@ -7,7 +7,7 @@ import Hamburger from './Hamburger';
 import { Container, Column, Ul, Flex, ImgWrapper, UlContainer } from './styles';
 
 export default function Nav() {
-	const [toggleNav, setToggleNav] = useState(true);
+	const [toggleNav, setToggleNav] = useState(false);
 
 	return (
 		<Container>
@@ -28,7 +28,7 @@ export default function Nav() {
 			</Column>
 			<Column>
 				<ImgWrapper>
-					<Image src={logo} layout='intrinsic' />
+					<Image src={logo} />
 				</ImgWrapper>
 			</Column>
 			<Column>Sing in</Column>
