@@ -22,6 +22,13 @@ const font = {
 		thin: 100,
 	},
 };
+const transitions = {
+	smoothShort: '0.3s ease-in-out',
+};
+
+const mediaQueries = {
+	table: '60em',
+};
 
 export const darkTheme = {
 	colors: {
@@ -32,9 +39,13 @@ export const darkTheme = {
 		gray: '#666666',
 		darkTheme_gray: '#222',
 		white: '#fff',
+		black: '#000',
+		nav: '#000',
 		font: '#fff',
 	},
 	font,
+	transitions,
+	mediaQueries,
 };
 
 export const lightTheme = {
@@ -46,7 +57,11 @@ export const lightTheme = {
 		gray: '#666666',
 		darkTheme_gray: '#222',
 		white: '#fff',
+		black: '#000',
+		nav: '#fff',
 		font: '#000',
 	},
 	font,
+	transitions,
+	mediaQueries,
 };
