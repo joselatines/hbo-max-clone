@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import { getSingleMedia } from '../../services/mediaServices';
 
-export default function MediaPage() {
+export default function MediaPage({ media }) {
 	const router = useRouter();
 	const { id } = router.query;
-	console.log(router);
+	console.log(media);
 	return (
 		<div>
 			<h1>Index {id}</h1>
@@ -16,19 +16,18 @@ export async function getStaticPaths() {
 	return {
 		paths: [
 			// String variant:
-			'/media/123',
+			'/media/951470',
 			// Object variant:
-			{ params: { id: '444' } },
+			{ params: { id: '324668' } },
 		],
 		fallback: true,
 	};
 }
 
 export async function getStaticProps(ctx) {
-	console.log(ctx);
 	// Need type of media and an id
-	const res = await getSingleMedia();
+	const data = await getSingleMedia();
 	return {
-		props: { popularMovies: 'd' }, // will be passed to the page component as props
+		props: { media: data }, // will be passed to the page component as props
 	};
 }

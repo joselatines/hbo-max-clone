@@ -10,7 +10,7 @@ export const getPopular = async (mediaType = 'movie', page = '1') => {
 
 export const getSingleMedia = async (mediaType = 'movie', id) => {
 	const res = await fetch(
-		`${base_URL}/${mediaType}/${id}?api_key=${API_KEY}&language=${lang}&page=${page}`
+		`${base_URL}/${mediaType}/${id}?api_key=${API_KEY}&language=${lang}`
 	);
 	const data = await res.json();
 	return data;
