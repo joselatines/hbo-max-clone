@@ -1,25 +1,27 @@
 import Header from '../components/Header';
-import CarrouselContainer from '../components/CarrouselContainer';
+import Carrousel from '../components/Carrousel';
 import { getPopular } from '../services/mediaServices';
+import OverviewMedia from '../components/overviewMedia';
 
 export default function Home({ mediaElements }) {
+	console.log(mediaElements);
 	return (
 		<>
 			<Header />
-			
-			{/* 	<CarrouselContainer
-				elements={mediaElements}
+			<Carrousel
 				title='Popular movies'
-				subtitle='fachero'
-			/> */}
+				subtitle='The most popular series from our library - no subscription needed.'
+				elements={mediaElements}
+			/>
+			<OverviewMedia title='Titulo' elements={mediaElements} />
 		</>
 	);
 }
 
 export async function getServerSideProps(ctx) {
-	const data = await getPopular();
+	const data = await getPopular('movie');
 
 	return {
-		props: { mediaElements: data.results.slice(0, 5) }, // will be passed to the page component as props
+		props: { mediaElements: data.results }, // will be passed to the page component as props
 	};
 }

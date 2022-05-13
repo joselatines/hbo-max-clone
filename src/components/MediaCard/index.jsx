@@ -3,10 +3,16 @@ import { Container, Overlay } from './styles';
 import imgHeader from '/public/img/poster.jpg';
 import overlay from '/public/img/mediaOverlay.png';
 
-export default function MediaCard({ img }) {
+export default function MediaCard({ id, image }) {
+	console.log(`https://image.tmdb.org/t/p/w500${image}`);
 	return (
 		<Container>
-			<Image src={imgHeader} layout='fill' />
+			<Image
+				src={`https://image.tmdb.org/t/p/w500${image}`}
+				width={250}
+				height={400}
+				objectFit='cover'
+			/>
 			<Overlay>
 				<Image src={overlay} />
 			</Overlay>

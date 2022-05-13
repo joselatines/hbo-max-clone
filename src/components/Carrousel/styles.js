@@ -6,12 +6,39 @@ export const Container = styled.div`
 	.swiper {
 		width: 100%;
 		height: 100%;
+		&:hover {
+			.swiper-button-next,
+			.swiper-button-prev {
+				opacity: 1;
+			}
+		}
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		transition: all ${({ theme }) => theme.transitions.smoothShort};
+		opacity: 0;
+		background-color: rgba(0, 0, 0, 0.55);
+
+		color: #fff;
+
+		height: -webkit-fill-available;
+		top: auto;
+		padding: 1.5rem;
+		right: 0;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+	}
+
+	.swiper-button-prev {
+		left: 0;
 	}
 
 	.swiper-slide {
 		text-align: center;
 		font-size: 18px;
-		background: #fff;
+		/* 	background: #fff; */
 
 		/* Center slide text vertically */
 		display: -webkit-box;
@@ -42,7 +69,7 @@ export const Title = styled.h3`
 	line-height: 0.8;
 `;
 export const SubTitle = styled.span`
-	font-weight: ${({ theme }) => theme.font.weight.light};
+	font-weight: ${({ theme }) => theme.font.weight.regular};
 	font-size: ${({ theme }) => theme.font.size.md};
 `;
 export const Text = styled.div`
