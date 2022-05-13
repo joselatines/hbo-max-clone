@@ -47,7 +47,7 @@ export default function Carrousel({ title, subtitle, elements }) {
 				>
 					{elements.map(({ id, poster_path }) => (
 						<SwiperSlide key={id}>
-							<MediaCard image={poster_path} id={id} />
+							<MediaCard image={poster_path} id={id} redirect={true} />
 						</SwiperSlide>
 					))}
 				</Swiper>

@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import SingleMediaPage from '../../components/SingleMediaPage';
 import { getSingleMedia } from '../../services/mediaServices';
 
 export default function MediaPage() {
@@ -7,19 +8,12 @@ export default function MediaPage() {
 
 	const router = useRouter();
 	const { id } = router.query; // Get the media id
-	console.log(mediaData);
 
 	useEffect(() => {
 		getSingleMedia(id).then(res => setMediaData(res));
 	}, []);
 
-	return (
-		<div>
-			<h1>
-				Index {mediaData.overview} {mediaData.popularity}
-			</h1>
-		</div>
-	);
+	return <SingleMediaPage mediaData={mediaData} />;
 }
 
 export async function getStaticPaths() {

@@ -1,19 +1,15 @@
-import Image from 'next/image';
-import { Bg, Container, Content } from './styles';
+import { Container, Content } from './styles';
 import Button from '../shared/Button/styles';
 import imgHeader from '../../../public/img/header.jpg';
 
 export default function Header() {
 	return (
-		<Container>
-			<Bg>
-				<Image src={imgHeader} />
-			</Bg>
+		<Container image={imgHeader}>
 			<Content>
-				<p>
+				<div>
 					<b>The stories we love and new ones to discover</b> <br />
-					Stream the best movies, series, originals, and more
-				</p>
+					<p>Stream the best movies, series, originals, and more</p>
+				</div>
 				<Button>start watching</Button>
 			</Content>
 		</Container>

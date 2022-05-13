@@ -16,7 +16,7 @@ export default function OverviewMedia({ title, elements }) {
 			<h1>{title}</h1>
 			<div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
 				{elements.map(({ id, poster_path }) => (
-					<MediaCard key={id} image={poster_path} id={id} />
+					<MediaCard key={id} image={poster_path} id={id} redirect={true} />
 				))}
 			</div>
 		</div>

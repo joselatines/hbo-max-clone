@@ -1,38 +1,28 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-	min-height: 80vh;
-	max-height: 90vh;
-	display: grid;
-	padding: 3rem 0;
-	align-items: end;
-`;
-export const ImgWrapper = styled.div`
-	min-width: 100%;
-`;
-export const Bg = styled.div`
-	position: absolute; // Relative to the body
-	top: 0;
-	left: 0;
+	margin: 0 -60px; // ignore padding layout
 	z-index: -1;
-	overflow: hidden;
-	max-height: 90vh;
+	overflow-x: hidden;
 
-	img {
-		object-fit: cover;
-	}
+	background-image: url(${({ image }) => image && image.src});
+	background-color: ${({ theme }) => theme.colors.bg};
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 
-	filter: brightness(90%);
-	-webkit-filter: brightness(90%);
-	-moz-filter: brightness(90%);
+	display: grid;
+	align-items: end;
+	padding: 60px;
+	min-height: 80vh;
 `;
 
 export const Content = styled.div`
-	font-size: ${({ theme }) => theme.font.size.md};
+	
 	b {
 		font-size: smaller;
 	}
 	p {
-		margin: 1rem;
+		font-size: ${({ theme }) => theme.colors.gray};
 	}
 `;

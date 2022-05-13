@@ -2,15 +2,15 @@ const font = {
 	style: '-apple-system',
 	size: {
 		default: '1px',
-		xxl: '5rem', //80px
-		xl: '3rem', //48px
-		lg3: '2.7rem', //43.2px
-		lg2: '2.5rem', //40px
-		lg1: '1.625rem', //26px
-		lg: '1.5rem', //24px
-		md: '1.25rem', //18px
-		sm: '1rem', //16px
-		xs: '0.75rem', //12px
+		xxl: '5em', //80px
+		xl: '3em', //48px
+		lg3: '2.7em', //43.2px
+		lg2: '2.5em', //40px
+		lg1: '1.625em', //26px
+		lg: '1.5em', //24px
+		md: '1.25em', //18px
+		sm: '1em', //16px
+		xs: '0.75em', //12px
 	},
 	weight: {
 		light: 300, // Most used
@@ -37,7 +37,7 @@ export const darkTheme = {
 		secondary: '#101743',
 		danger: '#0202',
 		bg: '#000',
-		gray: '#666666',
+		gray: '#ddd',
 		darkTheme_gray: '#222',
 		white: '#fff',
 		black: '#000',
@@ -49,14 +49,13 @@ export const darkTheme = {
 	mediaQueries,
 };
 
-
 export const lightTheme = {
 	colors: {
 		primary: '#495fe8',
 		secondary: '#101743',
 		danger: '#ef233c',
 		bg: '#F1F2F8',
-		gray: '#666666',
+		gray: '#ddd',
 		darkTheme_gray: '#222',
 		white: '#fff',
 		black: '#000',

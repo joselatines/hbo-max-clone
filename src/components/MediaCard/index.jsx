@@ -7,12 +7,32 @@ import { Container, Overlay } from './styles';
 MediaCard.propTypes = {
 	image: PropTypes.string.isRequired,
 	id: PropTypes.number.isRequired,
+	redirect: PropTypes.boolean,
 };
 
-export default function MediaCard({ image, id }) {
+MediaCard.defaultProps = {
+	redirect: true,
+};
+export default function MediaCard({ image, id, redirect }) {
 	return (
-		<Link href={`/media/${id}`}>
-			{image !== '' && (
+		<>
+			{/* // Image exits => redirect? =>  Component */}
+			{image !== '' && redirect ? (
+				<Link href={`/media/${id}`}>
+					<Container style={{ cursor: 'pointer' }}>
+						<Image
+							src={`https://image.tmdb.org/t/p/w500${image}`}
+							width={250}
+							height={400}
+							
+							objectFit='cover'
+						/>
+						<Overlay>
+							<Image src={overlay} />
+						</Overlay>
+					</Container>
+				</Link>
+			) : (
 				<Container>
 					<Image
 						src={`https://image.tmdb.org/t/p/w500${image}`}
@@ -25,6 +45,6 @@ export default function MediaCard({ image, id }) {
 					</Overlay>
 				</Container>
 			)}
-		</Link>
+		</>
 	);
 }

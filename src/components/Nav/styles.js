@@ -63,4 +63,6 @@ export const Flex = styled.div`
 export const ImgWrapper = styled.div`
 	max-width: 10vw;
 	min-width: 5rem;
+
+	cursor: pointer;
 `;

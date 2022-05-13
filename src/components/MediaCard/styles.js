@@ -12,9 +12,7 @@ export const Overlay = styled.div`
 `;
 
 export const Container = styled.div`
-	cursor: pointer;
-
-	max-width: 15vw;
+	max-width: 20vw;
 	min-width: 8vw;
 	position: relative;
 	transition: all ${({ theme }) => theme.transitions.shortSmooth};

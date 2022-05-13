@@ -19,13 +19,13 @@ export const GlobalStyles = createGlobalStyle`
 					theme.font.size.default}+ 6 * ((100vw - 320px) / 680));	
 		}
 
+
+
 		@media screen and (min-width: 1000px) {
    			font-size: 22px;
 		}
 		// Project styles
 		background: rgb(0,0,0);
-background: linear-gradient(166deg, rgba(0,0,0,1) 66%, rgba(71,19,193,1) 89%, rgba(121,93,255,1) 100%);
-
-
+		background: linear-gradient(166deg, rgba(0,0,0,1) 66%, rgba(71,19,193,1) 89%, rgba(121,93,255,1) 100%);
     }
 	`;
