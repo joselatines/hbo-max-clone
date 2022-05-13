@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types';
-import Image from 'next/image';
-import { Container, Overlay } from './styles';
-import imgHeader from '/public/img/poster.jpg';
-import overlay from '/public/img/mediaOverlay.png';
 import Link from 'next/link';
+import Image from 'next/image';
+import PropTypes from 'prop-types';
+import overlay from '/public/img/mediaOverlay.png';
+import { Container, Overlay } from './styles';
 
 MediaCard.propTypes = {
 	image: PropTypes.string.isRequired,
@@ -13,7 +12,7 @@ MediaCard.propTypes = {
 export default function MediaCard({ image, id }) {
 	return (
 		<Link href={`/media/${id}`}>
-			{image !== '' ? (
+			{image !== '' && (
 				<Container>
 					<Image
 						src={`https://image.tmdb.org/t/p/w500${image}`}
@@ -25,8 +24,6 @@ export default function MediaCard({ image, id }) {
 						<Image src={overlay} />
 					</Overlay>
 				</Container>
-			) : (
-				<div></div>
 			)}
 		</Link>
 	);

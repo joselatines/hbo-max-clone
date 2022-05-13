@@ -5,6 +5,7 @@ import logo from '../../../public/img/logo.svg';
 
 import Hamburger from './Hamburger';
 import { Container, Column, Ul, Flex, ImgWrapper, UlContainer } from './styles';
+import Link from 'next/link';
 
 export default function Nav() {
 	const [toggleNav, setToggleNav] = useState(false);
@@ -27,9 +28,11 @@ export default function Nav() {
 				</Flex>
 			</Column>
 			<Column>
-				<ImgWrapper>
-					<Image src={logo} />
-				</ImgWrapper>
+				<Link href='/'>
+					<ImgWrapper>
+						<Image src={logo} />
+					</ImgWrapper>
+				</Link>
 			</Column>
 			<Column>Sing in</Column>
 		</Container>

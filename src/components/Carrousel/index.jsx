@@ -45,7 +45,7 @@ export default function Carrousel({ title, subtitle, elements }) {
 					modules={[Pagination, Navigation]}
 					className='mySwiper'
 				>
-					{elements.map(({ poster_path, id }) => (
+					{elements.map(({ id, poster_path }) => (
 						<SwiperSlide key={id}>
 							<MediaCard image={poster_path} id={id} />
 						</SwiperSlide>

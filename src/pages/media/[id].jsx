@@ -1,13 +1,23 @@
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { getSingleMedia } from '../../services/mediaServices';
 
-export default function MediaPage({ media }) {
+export default function MediaPage() {
+	const [mediaData, setMediaData] = useState({}); // Where the media data is going to bed saved
+
 	const router = useRouter();
-	const { id } = router.query;
-	console.log(media);
+	const { id } = router.query; // Get the media id
+	console.log(mediaData);
+
+	useEffect(() => {
+		getSingleMedia(id).then(res => setMediaData(res));
+	}, []);
+
 	return (
 		<div>
-			<h1>Index {id}</h1>
+			<h1>
+				Index {mediaData.overview} {mediaData.popularity}
+			</h1>
 		</div>
 	);
 }
@@ -25,9 +35,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(ctx) {
-	// Need type of media and an id
-	const data = await getSingleMedia();
 	return {
-		props: { media: data }, // will be passed to the page component as props
+		props: {}, // will be passed to the page component as props
 	};
 }
