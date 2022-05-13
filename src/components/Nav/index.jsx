@@ -4,7 +4,7 @@ import { FiSearch } from 'react-icons/fi';
 import logo from '../../../public/img/logo.svg';
 
 import Hamburger from './Hamburger';
-import { Container, Column, Ul, Flex, ImgWrapper, UlContainer } from './styles';
+import { Container, Column, Flex, ImgWrapper, UlContainer } from './styles';
 import Link from 'next/link';
 
 export default function Nav() {
@@ -30,7 +30,7 @@ export default function Nav() {
 			<Column>
 				<Link href='/'>
 					<ImgWrapper>
-						<Image src={logo} />
+						<Image src={logo} alt='logo-hbo-max-svg' />
 					</ImgWrapper>
 				</Link>
 			</Column>

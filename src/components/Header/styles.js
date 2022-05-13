@@ -18,11 +18,12 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
-	
 	b {
 		font-size: smaller;
+		line-height: 0.8;
 	}
 	p {
-		font-size: ${({ theme }) => theme.colors.gray};
+		color: ${({ theme }) => theme.colors.gray};
+		line-height: 0.8;
 	}
 `;

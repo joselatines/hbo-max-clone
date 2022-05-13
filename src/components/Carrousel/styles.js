@@ -65,12 +65,13 @@ export const Container = styled.div`
 
 export const Title = styled.h3`
 	font-weight: ${({ theme }) => theme.font.weight.bold};
-	font-size: ${({ theme }) => theme.font.size.lg1};
+	font-size: ${({ theme }) => theme.font.size.lg};
 	line-height: 0.8;
 `;
 export const SubTitle = styled.span`
 	font-weight: ${({ theme }) => theme.font.weight.regular};
-	font-size: ${({ theme }) => theme.font.size.md};
+	font-size: ${({ theme }) => theme.font.size.sm};
+	color: ${({ theme }) => theme.colors.gray};
 `;
 export const Text = styled.div`
 	margin-bottom: 1rem;

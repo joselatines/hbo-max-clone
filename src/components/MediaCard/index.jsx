@@ -7,7 +7,7 @@ import { Container, Overlay } from './styles';
 MediaCard.propTypes = {
 	image: PropTypes.string.isRequired,
 	id: PropTypes.number.isRequired,
-	redirect: PropTypes.boolean,
+	redirect: PropTypes.bool,
 };
 
 MediaCard.defaultProps = {
@@ -21,10 +21,10 @@ export default function MediaCard({ image, id, redirect }) {
 				<Link href={`/media/${id}`}>
 					<Container style={{ cursor: 'pointer' }}>
 						<Image
+							alt='movie'
 							src={`https://image.tmdb.org/t/p/w500${image}`}
 							width={250}
 							height={400}
-							
 							objectFit='cover'
 						/>
 						<Overlay>

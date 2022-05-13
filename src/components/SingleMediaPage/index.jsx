@@ -1,3 +1,4 @@
+import { getImage } from '../../utils/functions';
 import MediaCard from '../MediaCard';
 import {
 	Container,
@@ -19,13 +20,12 @@ export default function SingleMediaPage({ mediaData }) {
 		genres,
 		overview,
 	} = mediaData;
-	console.log(genres);
-	const imageURL = img => `https://image.tmdb.org/t/p/w500${img}`;
+
 	return (
 		<>
 			{mediaData ? (
 				<Container>
-					<ImageWrapper image={imageURL(backdrop_path)}></ImageWrapper>
+					<ImageWrapper image={getImage(backdrop_path)}></ImageWrapper>
 					<Content>
 						<MediaCard image={poster_path} redirect={false} />
 

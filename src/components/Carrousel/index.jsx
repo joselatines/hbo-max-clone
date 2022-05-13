@@ -34,7 +34,7 @@ export default function Carrousel({ title, subtitle, elements }) {
 			<div>
 				<Swiper
 					slidesPerView={smallScreen ? 4 : 6}
-					spaceBetween={smallScreen ? 5 : 30}
+					spaceBetween={smallScreen ? 5 : 15}
 					slidesPerGroup={smallScreen ? 4 : 6}
 					loop={true}
 					loopFillGroupWithBlank={false}

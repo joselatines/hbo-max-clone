@@ -2,6 +2,8 @@ import Header from '../components/Header';
 import Carrousel from '../components/Carrousel';
 import { getPopular } from '../services/mediaServices';
 import OverviewMedia from '../components/overviewMedia';
+import RectangleCard from '../components/rectangleCard';
+import imgTest from '../../public/img/header.jpg';
 
 export default function Home({ popularMovies, popularTv }) {
 	return (
@@ -12,6 +14,7 @@ export default function Home({ popularMovies, popularTv }) {
 				subtitle='The most popular movies from our library'
 				elements={popularMovies}
 			/>
+			<RectangleCard title='Hola' txt='Si' img={imgTest} />
 			<Carrousel
 				title='Popular TV Series'
 				subtitle='The most popular TV series from our library'
@@ -27,6 +30,6 @@ export async function getServerSideProps(ctx) {
 	const tvs = await getPopular('tv');
 
 	return {
-		props: { popularMovies: movies.results, popularTv: tvs.results }, // will be passed to the page component as props
+		props: { popularMovies: movies, popularTv: tvs }, // will be passed to the page component as props
 	};
 }
