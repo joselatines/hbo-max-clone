@@ -1,8 +1,8 @@
 import Header from '../components/Header';
 import Carrousel from '../components/Carrousel';
 import { getPopular } from '../services/mediaServices';
-import OverviewMedia from '../components/overviewMedia';
-import RectangleCard from '../components/rectangleCard';
+import OverviewMedia from '../components/OverviewMedia';
+import RectangleCard from '../components/RectangleCard';
 import imgTest from '../../public/img/header.jpg';
 
 export default function Home({ popularMovies, popularTv }) {
