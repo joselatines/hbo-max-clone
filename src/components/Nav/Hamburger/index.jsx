@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export default function Hamburger({ setToggleNav, toggleNav }) {
 	return (
-		<Container onClick={() => setToggleNav(!toggleNav)} className='Hamburger'>
+		<Container onClick={() => setToggleNav(!toggleNav)}>
 			<Bar togglenav={toggleNav} />
 			<Bar togglenav={toggleNav} />
 			<Bar togglenav={toggleNav} />
