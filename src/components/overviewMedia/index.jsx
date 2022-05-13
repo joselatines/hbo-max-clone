@@ -1,7 +1,6 @@
 import MediaCard from '../MediaCard';
 
 export default function OverviewMedia({ title, elements }) {
-	console.log(elements);
 	return (
 		<div>
 			<h1>{title}</h1>

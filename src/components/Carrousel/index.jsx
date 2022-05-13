@@ -10,9 +10,21 @@ import { Pagination, Navigation } from 'swiper';
 
 import { Container, Title, SubTitle, Text } from './styles';
 import MediaCard from '../MediaCard';
+import useWindowWidth from '../../hooks/useWindowWith';
 
+Carrousel.propTypes = {
+	title: PropTypes.string,
+	subtitle: PropTypes.string,
+	elements: PropTypes.array.isRequired,
+};
+
+Carrousel.defaultProps = {
+	title: 'Pass a title through prop',
+};
 
 export default function Carrousel({ title, subtitle, elements }) {
+	const smallScreen = useWindowWidth(700);
+
 	return (
 		<Container>
 			<Text>
@@ -21,9 +33,9 @@ export default function Carrousel({ title, subtitle, elements }) {
 			</Text>
 			<div>
 				<Swiper
-					slidesPerView={6}
-					spaceBetween={20}
-					slidesPerGroup={6}
+					slidesPerView={smallScreen ? 4 : 6}
+					spaceBetween={smallScreen ? 5 : 30}
+					slidesPerGroup={smallScreen ? 4 : 6}
 					loop={true}
 					loopFillGroupWithBlank={false}
 					/* 	pagination={{
@@ -43,13 +55,3 @@ export default function Carrousel({ title, subtitle, elements }) {
 		</Container>
 	);
 }
-
-Carrousel.propTypes = {
-	title: PropTypes.string,
-	subtitle: PropTypes.string,
-	elements: PropTypes.array.isRequired,
-};
-
-Carrousel.defaultProps = {
-	title: 'Pass a title through prop',
-};
