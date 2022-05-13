@@ -1,35 +1,25 @@
 import Header from '../components/Header';
 import CarrouselContainer from '../components/CarrouselContainer';
-import MediaCard from '../components/MediaCard';
 import { getPopular } from '../services/mediaServices';
 
-export default function Home({ data }) {
-	const carrousels = [
-		{
-			title: 'Popular movies',
-			subtitle: 'Fachero',
-			type: 'popular-movies',
-		},
-		{
-			title: 'Popular movies',
-			subtitle: 'Fachero',
-			type: 'popular-movies',
-		},
-	];
+export default function Home({ mediaElements }) {
 	return (
 		<>
 			<Header />
-			{/* // [...carrouselData] pass all the key with its values */}
-			{carrousels.map(({ ...carrouselData }) => (
-				<CarrouselContainer {...carrouselData} />
-			))}
+			
+			{/* 	<CarrouselContainer
+				elements={mediaElements}
+				title='Popular movies'
+				subtitle='fachero'
+			/> */}
 		</>
 	);
 }
 
 export async function getServerSideProps(ctx) {
 	const data = await getPopular();
+
 	return {
-		props: { data }, // will be passed to the page component as props
+		props: { mediaElements: data.results.slice(0, 5) }, // will be passed to the page component as props
 	};
 }
