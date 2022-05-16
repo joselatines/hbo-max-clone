@@ -4,7 +4,12 @@ export const Container = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 	gap: 2rem;
+
+	@media only screen and (max-width: 40em) {
+		flex-wrap: wrap;
+	}
 
 	p {
 		color: ${({ theme }) => theme.colors.gray};
@@ -12,7 +17,7 @@ export const Container = styled.div`
 		margin: 0.5rem 0 1rem;
 	}
 	div {
-		width: 70%;
+		flex: 70%;
 	}
 `;
 

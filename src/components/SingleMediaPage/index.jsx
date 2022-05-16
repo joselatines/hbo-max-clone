@@ -1,14 +1,7 @@
 import { getImage } from '../../utils/functions';
 import MediaCard from '../MediaCard';
-import {
-	Container,
-	ImageWrapper,
-	Content,
-	Poster,
-	Info,
-	Overview,
-	Title,
-} from './styles';
+import Loader from '../shared/Loader';
+import { ImageWrapper, Content, Info } from './styles';
 
 export default function SingleMediaPage({ mediaData }) {
 	const {
@@ -23,8 +16,8 @@ export default function SingleMediaPage({ mediaData }) {
 
 	return (
 		<>
-			{mediaData ? (
-				<Container>
+			{genres ? (
+				<div>
 					<ImageWrapper image={getImage(backdrop_path)}></ImageWrapper>
 					<Content>
 						<MediaCard image={poster_path} redirect={false} />
@@ -32,16 +25,16 @@ export default function SingleMediaPage({ mediaData }) {
 						<div>
 							<h1>{title}</h1>
 							<Info>
-								{genres !== undefined &&
+								{genres.length !== 0 &&
 									genres.map(({ name }) => <span key={name}>{name} </span>)}
 								| <span>{release_date}</span> | <span>{vote_average}/10</span>
 							</Info>
 							<p>{overview}</p>
 						</div>
 					</Content>
-				</Container>
+				</div>
 			) : (
-				<h1>Loading</h1>
+				<span></span>
 			)}
 		</>
 	);

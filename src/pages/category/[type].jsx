@@ -28,8 +28,8 @@ export default function Category() {
 			<h2>Popular {txt}</h2>
 			<div>
 				{mediaData &&
-					mediaData.map(({ poster_path, id }) => (
-						<div style={{ maxWidth: '10rem' }} key={id}>
+					mediaData.map(({ poster_path, id, title }) => (
+						<div style={{ maxWidth: '10rem' }} key={(id, title)}>
 							<MediaCard image={poster_path} id={id} redirect={true} />
 						</div>
 					))}

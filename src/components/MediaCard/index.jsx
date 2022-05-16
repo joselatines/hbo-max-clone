@@ -3,9 +3,10 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import overlay from '/public/img/mediaOverlay.png';
 import { Container, Overlay } from './styles';
+import { getImage } from '../../utils/functions';
 
 MediaCard.propTypes = {
-	image: PropTypes.string.isRequired,
+	image: PropTypes.string,
 	id: PropTypes.number.isRequired,
 	redirect: PropTypes.bool,
 };
@@ -21,29 +22,26 @@ export default function MediaCard({ image, id, redirect }) {
 				<Link href={`/media/${id}`}>
 					<Container style={{ cursor: 'pointer' }}>
 						<Image
-							alt={('movie', id)}
-							src={`https://image.tmdb.org/t/p/w500${image}`}
+							alt={('movie-', id)}
+							src={getImage(image)}
 							width={250}
 							height={400}
 							objectFit='cover'
 						/>
 						<Overlay>
-							<Image src={overlay} />
+							<Image src={overlay} alt={`overlay`} />
 						</Overlay>
 					</Container>
 				</Link>
 			) : (
 				<Container>
 					<Image
-						src={`https://image.tmdb.org/t/p/w500${image}`}
-						alt={`movie-${id}`}
+						src={getImage(image)}
+						alt={('movie-', id)}
 						width={250}
 						height={400}
 						objectFit='cover'
 					/>
-					<Overlay>
-						<Image src={overlay} alt='overlay'  />
-					</Overlay>
 				</Container>
 			)}
 		</>

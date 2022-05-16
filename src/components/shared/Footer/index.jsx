@@ -1,6 +1,6 @@
 import { Column, Title, Subtitle, Container, Row } from './styles';
 
-const Footer = () => {
+export default function Footer() {
 	return (
 		<Container>
 			<Row>
@@ -50,6 +50,4 @@ const Footer = () => {
 			</Row>
 		</Container>
 	);
-};
-
-export default Footer;
+}

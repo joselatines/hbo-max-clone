@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
-
 export const ImageWrapper = styled.div`
 	margin: -10px -60px; // ignore padding layout
 	z-index: -1;
@@ -12,7 +10,7 @@ export const ImageWrapper = styled.div`
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	filter: blur(1px) brightness(95%);
+	filter: blur(5px) brightness(80%);
 
 	min-height: 60vh;
 `;

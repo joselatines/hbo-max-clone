@@ -41,7 +41,6 @@ export const getSingleMedia = async id => {
 		console.error('Something went wrong', err);
 	}
 };
-
 export const getLatest = async (mediaType = 'movie') => {
 	try {
 		const res = await fetch(
