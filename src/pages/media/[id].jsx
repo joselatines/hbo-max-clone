@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import SingleMediaPage from '../../components/SingleMediaPage';
-import { getSingleMedia } from '../../services/mediaServices';
+import { getSingleMedia } from '../../services/media';
 
 export default function MediaPage() {
 	const [mediaData, setMediaData] = useState({}); // Where the media data is going to bed saved
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 			// Object variant:
 			{ params: { id: '324668' } },
 		],
-		fallback: false,
+		fallback: true,
 	};
 }
 
