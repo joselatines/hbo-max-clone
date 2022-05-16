@@ -29,9 +29,8 @@ export const UlContainer = styled.div`
 		flex-direction: column;
 		align-items: flex-start;
 
-		padding: 1rem 8rem 0 3rem;
+		padding: 1rem 5rem 0 3rem;
 		overflow: hidden;
-		max-width: 20vw;
 		min-height: 100vh;
 		/* 	padding: 2rem 3rem; */
 		background-color: ${({ theme }) => theme.colors.nav};
@@ -51,6 +50,9 @@ export const UlContainer = styled.div`
 			-webkit-backdrop-filter: blur(1px);
 			background: rgba(0, 0, 0, 0.15);
 			/* opacity: 0.2; */
+		}
+		li {
+			cursor: pointer;
 		}
 	}
 `;

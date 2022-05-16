@@ -6,14 +6,13 @@ export const getPopular = async (mediaType = 'movie', page = '1') => {
 			`${base_URL}/${mediaType}/popular?api_key=${API_KEY}&language=${lang}&page=${page}`
 		);
 
-		if (res.status === 200) {
-			const data = await res.json();
-			const filteredData = data.results.filter(
-				el => (el.poster_path !== null) | undefined
-			);
+		const data = await res.json();
 
-			return filteredData;
-		} else return undefined;
+		const filteredData = data.results.filter(
+			el => el.poster_path !== null && el.backdrop_path !== null
+		);
+
+		return filteredData;
 	} catch (err) {
 		console.error('Something went wrong', err);
 	}
@@ -45,14 +44,12 @@ export const getSingleMedia = async id => {
 
 export const getLatest = async (mediaType = 'movie') => {
 	try {
-		
 		const res = await fetch(
 			`${base_URL}/${mediaType}/latest?api_key=${API_KEY}&language=${lang}&page=${page}`
 		);
 		const data = await res.json();
 
-		return data; 
-
+		return data;
 	} catch (err) {
 		console.error('Something went wrong', err);
 	}

@@ -5,7 +5,7 @@ import { getSingleMedia } from '../../services/media';
 
 export default function MediaPage() {
 	const [mediaData, setMediaData] = useState({}); // Where the media data is going to bed saved
-	console.log(mediaData);
+
 	const router = useRouter();
 	const { id } = router.query; // Get the media id
 

@@ -26,6 +26,6 @@ export const GlobalStyles = createGlobalStyle`
 		}
 		// Project styles
 		background: rgb(0,0,0);
-		background: linear-gradient(166deg, rgba(0,0,0,1) 66%, rgba(71,19,193,1) 89%, rgba(121,93,255,1) 100%);
+		background: linear-gradient(130deg, rgba(0,0,0,1) 66%, rgba(71,19,193,1) 89%, rgba(121,93,255,1) 100%);
     }
 	`;
