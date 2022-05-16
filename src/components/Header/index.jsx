@@ -10,7 +10,7 @@ export default function Header() {
 					<b>The stories we love and new ones to discover</b> <br />
 					<p>Stream the best movies, series, originals, and more</p>
 				</div>
-				<Button>start watching</Button>
+				<Button>Start watching</Button>
 			</Content>
 		</Container>
 	);

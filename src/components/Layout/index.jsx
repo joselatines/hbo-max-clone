@@ -1,12 +1,11 @@
-import Footer from '../Footer';
 import Nav from '../Nav';
+import Footer from '../shared/Footer';
 
 export default function Layout({ children }) {
 	return (
 		<>
 			<Nav />
 			<main>{children}</main>
-
 			<Footer />
 			<style jsx>{`
 				main {

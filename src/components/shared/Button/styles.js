@@ -1,50 +1,31 @@
 import styled, { css } from 'styled-components';
 const Button = styled.button`
-	all: unset;
 	cursor: pointer;
 
+	outline: none;
 	font-size: ${({ size }) => (size ? size : '1em')};
 	text-align: center;
 	width: max-content;
-	/* 
-	background-color: ${({ color, theme }) =>
-		color ? color : theme.colors.primary};
-	background-color: ${({ danger, theme }) => danger && theme.colors.danger};
-	color: ${({ color, theme }) => (color ? color : theme.colors.font)}; */
+	padding: 0.5em 1.5em;
 
-	padding: 0.5em 2em;
-	border: 3px solid transparent;
-	/* border-radius: 50px; */
-
-	transition: all ${({ theme }) => theme.transitions.btn};
-
-	// For icons
-	display: flex;
-	place-items: center;
-	gap: 0.5em;
-
-	// Project
-	background-color: transparent;
+	border: none;
+	color: #fff;
+	font-weight: ${({ theme }) => theme.font.weight.bold};
+	background-size: 300% 100%;
 	background-image: linear-gradient(
 		to right,
-		rgb(71, 16, 193) 0%,
-		rgb(120, 87, 255) 51%,
-		rgb(129, 155, 253) 100%
+		#8051f1,
+		rgba(71, 19, 193, 1),
+		#8051f1,
+		rgba(121, 93, 255, 1)
 	);
+	box-shadow: 0 4px 15px 0 rgba(121, 93, 255, 0.75);
 
-	background-size: 200% auto;
-	border-radius: 25px;
-
-	text-transform: uppercase;
-	font-weight: ${({ theme }) => theme.font.weight.medium};
-
-	a {
-		all: unset;
-	}
+	border-radius: 50px;
+	transition: all 0.4s ease-in-out;
 
 	&:hover {
-		transform: scale(1.05);
-		background-position: right center;
+		background-position: 100% 0;
 	}
 
 	${({ outline, theme }) =>

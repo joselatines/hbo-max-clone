@@ -34,7 +34,7 @@ const mediaQueries = {
 export const darkTheme = {
 	colors: {
 		primary: '#495fe8',
-		secondary: '#101743',
+		secondary: '#FEAE24',
 		danger: '#0202',
 		bg: '#000',
 		gray: '#ddd',
@@ -52,7 +52,7 @@ export const darkTheme = {
 export const lightTheme = {
 	colors: {
 		primary: '#495fe8',
-		secondary: '#101743',
+		secondary: '#FEAE24',
 		danger: '#ef233c',
 		bg: '#F1F2F8',
 		gray: '#ddd',

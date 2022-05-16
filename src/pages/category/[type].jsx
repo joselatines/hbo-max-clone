@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getPopular } from '../../services/media';
 import MediaCard from '../../components/MediaCard';
 import Button from '../../components/shared/Button/styles';
+import { Container } from './styles';
 
 export default function Category() {
 	const [mediaData, setMediaData] = useState([{}]); // Where the media data is going to bed saved
@@ -23,9 +24,9 @@ export default function Category() {
 	}, [type, page]);
 
 	return (
-		<div>
-			<h2 style={{ marginBottom: '1rem' }}>Popular {txt}</h2>
-			<div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+		<Container>
+			<h2>Popular {txt}</h2>
+			<div>
 				{mediaData &&
 					mediaData.map(({ poster_path, id }) => (
 						<div style={{ maxWidth: '10rem' }} key={id}>
@@ -33,8 +34,10 @@ export default function Category() {
 						</div>
 					))}
 			</div>
-			<Button onClick={() => changePage('prev')}>Prev</Button>
-			<Button onClick={() => changePage('next')}>Next</Button>
-		</div>
+			<div>
+				<Button onClick={() => changePage('prev')}>Prev</Button>
+				<Button onClick={() => changePage('next')}>Next</Button>
+			</div>
+		</Container>
 	);
 }

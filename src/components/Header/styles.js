@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
 	margin: 0 -60px; // ignore padding layout
-	z-index: -1;
+	/* z-index: -1; */
 	overflow-x: hidden;
 
 	background-image: url(${({ image }) => image && image.src});
@@ -18,6 +18,9 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 	b {
 		font-size: smaller;
 		line-height: 0.8;
