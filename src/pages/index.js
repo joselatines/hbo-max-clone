@@ -14,7 +14,7 @@ export default function Home({ popularMovies, popularTv }) {
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
 			<Header />
-			<Carrousel
+		{/* 	<Carrousel
 				title='Popular movies'
 				subtitle='The most popular movies from our library'
 				elements={popularMovies}
@@ -28,7 +28,7 @@ export default function Home({ popularMovies, popularTv }) {
 				title='Popular TV Series'
 				subtitle='The most popular TV series from our library'
 				elements={popularTv}
-			/>
+			/> */}
 		</div>
 	);
 }
