@@ -11,6 +11,7 @@ const Button = styled.button`
 	border: none;
 	color: #fff;
 	font-weight: ${({ theme }) => theme.font.weight.bold};
+	background: ${({ theme }) => theme.colors.primary};
 	background-size: 300% 100%;
 	background-image: linear-gradient(
 		to right,

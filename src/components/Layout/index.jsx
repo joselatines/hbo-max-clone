@@ -1,9 +1,13 @@
+import Head from 'next/head';
 import Nav from '../Nav';
 import Footer from '../shared/Footer';
 
 export default function Layout({ children }) {
 	return (
 		<>
+			<Head>
+				<link rel='shortcut icon' href='/favicon.ico' />
+			</Head>
 			<Nav />
 			<main>{children}</main>
 			<Footer />

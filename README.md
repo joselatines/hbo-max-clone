@@ -1,16 +1,13 @@
-# Example app with styled-components
+# HBO Max Clone 💻
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+## Description 📚
 
-This example uses the Rust-based [SWC](https://nextjs.org/docs/advanced-features/compiler#styled-components) in Next.js for better performance than Babel.
+Clone website made in Next Js simulating a HBO Max home page
 
-Currently, only the `ssr` and `displayName` transforms have been implemented. These two transforms are the main requirement for using `styled-components` in Next.js.
+## Frontend Development 🌞
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 
 ## How to use
 
@@ -41,42 +38,42 @@ When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `ne
 **components/StyledLink.js**
 
 ```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
+import Link from 'next/link';
+import styled from 'styled-components';
 
 const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
+	<Link href={href} as={as} passHref>
+		<a className={className}>{children}</a>
+	</Link>
+);
 
 export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+	color: #0075e0;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
 
-  &:hover {
-    color: #40a9ff;
-  }
+	&:hover {
+		color: #40a9ff;
+	}
 
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
+	&:focus {
+		color: #40a9ff;
+		outline: none;
+		border: 0;
+	}
+`;
 ```
 
 **pages/index.js**
 
 ```javascript
-import StyledLink from '../components/StyledLink'
+import StyledLink from '../components/StyledLink';
 
 export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
+	<StyledLink href='/post/[pid]' forwardedAs='/post/abc'>
+		First post
+	</StyledLink>
+);
 ```
 
 </details>
