@@ -21,7 +21,7 @@ export default function MediaCard({ image, id, redirect }) {
 				<Link href={`/media/${id}`}>
 					<Container style={{ cursor: 'pointer' }}>
 						<Image
-							alt='movie'
+							alt={('movie', id)}
 							src={`https://image.tmdb.org/t/p/w500${image}`}
 							width={250}
 							height={400}
