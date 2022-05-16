@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -9,8 +10,12 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper';
 
 import { Container, Title, SubTitle, Text } from './styles';
-import MediaCard from '../MediaCard';
 import useWindowWidth from '../../hooks/useWindowWith';
+import Loader from '../shared/Loader';
+
+const LazyMediaCard = dynamic(() => import('../MediaCard'), {
+	loading: () => <Loader />,
+});
 
 Carrousel.propTypes = {
 	title: PropTypes.string,
@@ -45,9 +50,13 @@ export default function Carrousel({ title, subtitle, elements }) {
 					modules={[Pagination, Navigation]}
 					className='mySwiper'
 				>
-					{elements.map(({ id, poster_path }) => (
-						<SwiperSlide key={id}>
-							<MediaCard image={poster_path} id={id} redirect={true} />
+					{elements.map(el => (
+						<SwiperSlide key={el.id}>
+							<LazyMediaCard
+								image={el.poster_path}
+								id={el.id}
+								redirect={true}
+							/>
 						</SwiperSlide>
 					))}
 				</Swiper>

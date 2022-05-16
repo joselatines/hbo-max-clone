@@ -7,7 +7,7 @@ import { getImage } from '../../utils/functions';
 
 MediaCard.propTypes = {
 	image: PropTypes.string,
-	id: PropTypes.number.isRequired,
+	id: PropTypes.number,
 	redirect: PropTypes.bool,
 };
 

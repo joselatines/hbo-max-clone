@@ -1,7 +1,11 @@
+import dynamic from 'next/dynamic'
 import { getImage } from '../../utils/functions';
-import MediaCard from '../MediaCard';
+
 import Loader from '../shared/Loader';
 import { ImageWrapper, Content, Info } from './styles';
+const LazyMediaCard = dynamic(() => import('../MediaCard'), {
+	loading: () => <Loader />,
+});
 
 export default function SingleMediaPage({ mediaData }) {
 	const {
@@ -20,7 +24,7 @@ export default function SingleMediaPage({ mediaData }) {
 				<div>
 					<ImageWrapper image={getImage(backdrop_path)}></ImageWrapper>
 					<Content>
-						<MediaCard image={poster_path} redirect={false} />
+						<LazyMediaCard image={poster_path} redirect={false} />
 
 						<div>
 							<h1>{title}</h1>

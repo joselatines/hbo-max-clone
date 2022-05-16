@@ -1,7 +1,13 @@
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import SingleMediaPage from '../../components/SingleMediaPage';
+
+import Loader from '../../components/shared/Loader';
+
 import { getSingleMedia } from '../../services/media';
+const LazySingleMediaPage = dynamic(() => import('../../components/SingleMediaPage'), {
+	loading: () => <Loader />,
+});
 
 export default function MediaPage() {
 	const [mediaData, setMediaData] = useState({}); // Where the media data is going to bed saved
@@ -13,5 +19,5 @@ export default function MediaPage() {
 		getSingleMedia(id).then(res => setMediaData(res));
 	}, [id]);
 
-	return <SingleMediaPage mediaData={mediaData} />;
+	return <LazySingleMediaPage mediaData={mediaData} />;
 }

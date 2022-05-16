@@ -1,8 +1,14 @@
-import Header from '../components/Header';
+import dynamic from 'next/dynamic'
 import Carrousel from '../components/Carrousel';
 import { getPopular } from '../services/media';
 import RectangleCard from '../components/RectangleCard';
 import imgTest from '../../public/img/header.jpg';
+import Loader from '../components/shared/Loader';
+
+const LazyHeader = dynamic(() => import('../components/Header'), {
+	loading: () => <Loader />,
+});
+
 
 export default function Home({ popularMovies, popularTv }) {
 	const rectangleTxt = [
@@ -13,7 +19,7 @@ export default function Home({ popularMovies, popularTv }) {
 	];
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-			<Header />
+			<LazyHeader />
 			<Carrousel
 				title='Popular movies'
 				subtitle='The most popular movies from our library'

@@ -1,12 +1,18 @@
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { getPopular } from '../../services/media';
-import MediaCard from '../../components/MediaCard';
-import Button from '../../components/shared/Button/styles';
+
+const LazyMediaCard = dynamic(() => import('../../components/MediaCard'), {
+	loading: () => <Loader />,
+});
+
 import { Container } from './styles';
+import Button from '../../components/shared/Button/styles';
+import Loader from '../../components/shared/Loader';
 
 export default function Category() {
-	const [mediaData, setMediaData] = useState([{}]); // Where the media data is going to bed saved
+	const [mediaData, setMediaData] = useState([]); // Where the media data is going to bed saved
 	const [page, setPage] = useState(1);
 
 	const router = useRouter();
@@ -28,9 +34,13 @@ export default function Category() {
 			<h2>Popular {txt}</h2>
 			<div>
 				{mediaData &&
-					mediaData.map(({ poster_path, id, title }) => (
-						<div style={{ maxWidth: '10rem' }} key={(id, title)}>
-							<MediaCard image={poster_path} id={id} redirect={true} />
+					mediaData.map(el => (
+						<div style={{ maxWidth: '10rem' }} key={el.id}>
+							<LazyMediaCard
+								image={el.poster_path}
+								id={el.id}
+								redirect={true}
+							/>
 						</div>
 					))}
 			</div>
