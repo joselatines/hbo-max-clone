@@ -1,7 +1,6 @@
 import Header from '../components/Header';
 import Carrousel from '../components/Carrousel';
 import { getPopular } from '../services/MediaServices';
-import OverviewMedia from '../components/OverviewMedia';
 import RectangleCard from '../components/RectangleCard';
 import imgTest from '../../public/img/header.jpg';
 
@@ -30,7 +29,6 @@ export default function Home({ popularMovies, popularTv }) {
 				subtitle='The most popular TV series from our library'
 				elements={popularTv}
 			/>
-			<OverviewMedia title='Titulo' elements={popularMovies} />
 		</div>
 	);
 }
