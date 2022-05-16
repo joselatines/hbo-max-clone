@@ -11,7 +11,7 @@ export default function MediaPage() {
 
 	useEffect(() => {
 		getSingleMedia(id).then(res => setMediaData(res));
-	}, []);
+	}, [id]);
 
 	return <SingleMediaPage mediaData={mediaData} />;
 }

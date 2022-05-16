@@ -42,7 +42,7 @@ export default function MediaCard({ image, id, redirect }) {
 						objectFit='cover'
 					/>
 					<Overlay>
-						<Image src={overlay} />
+						<Image src={overlay} alt='overlay'  />
 					</Overlay>
 				</Container>
 			)}

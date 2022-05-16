@@ -21,8 +21,8 @@ export default function Category() {
 			<div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
 				{mediaData &&
 					mediaData.map(({ poster_path, id }) => (
-						<div style={{ maxWidth: '10rem' }}>
-							<MediaCard key={id} image={poster_path} id={id} redirect={true}>
+						<div style={{ maxWidth: '10rem' }} key={id}>
+							<MediaCard image={poster_path} id={id} redirect={true}>
 								Hola
 							</MediaCard>
 						</div>
