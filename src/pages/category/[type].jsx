@@ -7,7 +7,6 @@ const LazyMediaCard = dynamic(() => import('../../components/MediaCard'), {
 	loading: () => <Loader />,
 });
 
-import { Container } from './styles';
 import Button from '../../components/shared/Button/styles';
 import Loader from '../../components/shared/Loader';
 
@@ -30,7 +29,7 @@ export default function Category() {
 	}, [type, page]);
 
 	return (
-		<Container>
+		<div className='Container'>
 			<h2>Popular {txt}</h2>
 			<div>
 				{mediaData &&
@@ -48,6 +47,18 @@ export default function Category() {
 				<Button onClick={() => changePage('prev')}>Prev</Button>
 				<Button onClick={() => changePage('next')}>Next</Button>
 			</div>
-		</Container>
+			<style jsx>{`
+				.Container {
+					display: grid;
+					gap: 1.5rem;
+					place-items: center;
+					div {
+						display: flex;
+						flex-wrap: wrap;
+						gap: 1.3rem;
+					}
+				}
+			`}</style>
+		</div>
 	);
 }
