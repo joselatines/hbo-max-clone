@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Container } from './styles';
+import Button from '../shared/Button/styles';
 
 RectangleCard.propTypes = {
 	title: PropTypes.string.isRequired,
 	txt: PropTypes.string,
-	img: PropTypes.array.isRequired,
 };
 
 RectangleCard.defaultProps = {
@@ -19,8 +19,9 @@ export default function RectangleCard({ title, txt, img }) {
 			<div>
 				<h3>{title}</h3>
 				<p>{txt}</p>
+				<Button>Wtaching</Button>
 			</div>
-			<Image src={img} alt='movie' width={500} height={400} />
+			<Image src={img} alt='movie' width={550} height={320} />
 		</Container>
 	);
 }
