@@ -17,9 +17,13 @@ export default function Nav() {
 					<Hamburger setToggleNav={setToggleNav} toggleNav={toggleNav} />
 					<UlContainer active={toggleNav}>
 						<ul>
-							<Hamburger setToggleNav={setToggleNav} toggleNav={toggleNav} />
-							<li>Genre</li>
-							<li>Genre</li>
+							<Hamburger
+								setToggleNav={setToggleNav}
+								toggleNav={toggleNav}
+								type='x'
+							/>
+							<li>Movies</li>
+							<li>TV Series</li>
 							<li>Genre</li>
 						</ul>
 					</UlContainer>

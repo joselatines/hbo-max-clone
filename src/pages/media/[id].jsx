@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 			// Object variant:
 			{ params: { id: '324668' } },
 		],
-		fallback: true,
+		fallback: false,
 	};
 }
 

@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Carrousel from '../components/Carrousel';
-import { getPopular } from '../services/mediaServices';
+import { getPopular } from '../services/MediaServices';
 import OverviewMedia from '../components/OverviewMedia';
 import RectangleCard from '../components/RectangleCard';
 import imgTest from '../../public/img/header.jpg';
