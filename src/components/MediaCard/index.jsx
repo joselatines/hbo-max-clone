@@ -36,6 +36,7 @@ export default function MediaCard({ image, id, redirect }) {
 				<Container>
 					<Image
 						src={`https://image.tmdb.org/t/p/w500${image}`}
+						alt={`movie-${id}`}
 						width={250}
 						height={400}
 						objectFit='cover'
