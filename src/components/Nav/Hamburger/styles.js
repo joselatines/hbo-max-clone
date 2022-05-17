@@ -11,10 +11,10 @@ export const Container = styled.div`
 export const Bar = styled.span`
 	display: block;
 	width: 25px;
-	height: 2px;
+	height: 3px;
 	margin: 5px auto;
-	/* 	-webkit-transition: all 0.3s ease-in-out;
-transition: all 0.3s ease-in-out; */
+
+	transition: all 0.3s ease-in-out;
 	background-color: ${({ theme }) => theme.colors.font};
 
 	${({ toggle }) =>

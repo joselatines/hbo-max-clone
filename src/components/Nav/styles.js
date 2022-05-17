@@ -21,7 +21,7 @@ export const UlContainer = styled.div`
 	left: ${({ active }) => (active ? 0 : '-100%')};
 	z-index: 80;
 
-	transition: ${({ theme }) => theme.transitions.smoothShort};
+	transition: all ${({ theme }) => theme.transitions.smoothShort};
 	ul {
 		list-style-type: none;
 
@@ -48,8 +48,7 @@ export const UlContainer = styled.div`
 
 			backdrop-filter: blur(1px);
 			-webkit-backdrop-filter: blur(1px);
-			background: rgba(0, 0, 0, 0.15);
-			/* opacity: 0.2; */
+			background: rgba(0, 0, 0, 0.25);
 		}
 		li {
 			cursor: pointer;
