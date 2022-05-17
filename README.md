@@ -2,8 +2,8 @@
 
 ## Description 📚
 
-Clone website made in Next Js simulating a HBO Max.
-In this project I wanted to keep it simple and show that I can handle an api, I used <code>fetch</code>.
+Clone website made in Next Js.
+In this project I wanted to keep it simple and show that I can handle an api, I used <code>fetch</code> to handle the api calls.
 
 ## Frontend Development 🌞
 
