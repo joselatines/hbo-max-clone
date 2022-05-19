@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-	margin: 0 -60px; // ignore padding layout
+	margin: 0 -50px; // ignore padding layout
 	/* z-index: -1; */
 	overflow-x: hidden;
 
@@ -13,7 +13,7 @@ export const Container = styled.header`
 
 	display: grid;
 	align-items: end;
-	padding: 60px;
+	padding: 50px;
 	min-height: 80vh;
 `;
 

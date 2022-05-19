@@ -30,7 +30,11 @@ export default function SingleMediaPage({ mediaData }) {
 					<Container>
 						<ImageWrapper image={getImage(backdrop_path)}></ImageWrapper>
 						<Poster>
-							<LazyMediaCard image={poster_path} redirect={false} />
+							<LazyMediaCard
+								image={poster_path}
+								redirect={false}
+								title={title ? title : name}
+							/>
 						</Poster>
 						<Content>
 							<div>
@@ -52,18 +56,20 @@ export default function SingleMediaPage({ mediaData }) {
 						<p>{overview}</p>
 						<h2>About</h2>
 						<ul>
-							<li>Original title: {title ? title : name}</li>
+							<li>Original title: {original_title ? original_title : name}</li>
 							<li>
 								Genres:{' '}
 								{genres &&
 									genres.map(({ name }) => <span key={name}>{name} </span>)}
 							</li>
-							<li>
-								Website:{' '}
-								<a href={homepage} target='_blank' rel='noopener noreferrer'>
-									{homepage}
-								</a>
-							</li>
+							{homepage && (
+								<li>
+									Website:{' '}
+									<a href={homepage} target='_blank' rel='noopener noreferrer'>
+										{homepage}
+									</a>
+								</li>
+							)}
 						</ul>
 					</div>
 				</>

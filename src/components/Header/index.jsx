@@ -1,6 +1,6 @@
 import { Container, Content } from './styles';
 import Button from '../shared/Button/styles';
-import imgHeader from '../../../public/img/header.jpg';
+import imgHeader from '../../../public/img/header.png';
 
 export default function Header() {
 	return (

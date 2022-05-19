@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
 	position: relative;
 
-	margin: 0 -60px; // ignore padding layout
-	padding: 60px;
+	margin: 0 -50px; // ignore padding layout
+	padding: 50px;
 
 	display: grid;
 	gap: 2rem;

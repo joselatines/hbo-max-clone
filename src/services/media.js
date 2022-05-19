@@ -41,6 +41,7 @@ export const getSingleMedia = async id => {
 		console.error('Something went wrong', err);
 	}
 };
+
 export const getLatest = async (mediaType = 'movie') => {
 	try {
 		const res = await fetch(
@@ -49,6 +50,28 @@ export const getLatest = async (mediaType = 'movie') => {
 		const data = await res.json();
 
 		return data;
+	} catch (err) {
+		console.error('Something went wrong', err);
+	}
+};
+
+export const searchMedia = async query => {
+	try {
+		const res = await fetch(
+			`${base_URL}/search/tv?api_key=${API_KEY}&language=${lang}&query=${query}&include_adult=true`
+		);
+		const tvData = await res.json();
+
+		const filteredTVData = tvData.results.filter(el => el.poster_path);
+
+		const resMovie = await fetch(
+			`${base_URL}/search/movie?api_key=${API_KEY}&language=${lang}&query=${query}&include_adult=false`
+		);
+		const movieData = await resMovie.json();
+
+		const filteredMovies = movieData.results.filter(el => el.poster_path);
+
+		return { tv: filteredTVData, movie: filteredMovies };
 	} catch (err) {
 		console.error('Something went wrong', err);
 	}

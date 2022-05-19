@@ -26,9 +26,12 @@ export const GlobalStyles = createGlobalStyle`
 		}
 		// Project styles
 		background: ${({ theme }) => theme.colors.bg};
-		background: linear-gradient(130deg, rgba(0,0,0,1) 42%, rgba(71,19,193,1) 70%, rgba(121,93,255,1) 100%);
-   
-		a {
+		background: rgb(0,0,0);
+		background: -moz-linear-gradient(99deg, rgba(0,0,0,1) 36%, rgba(71,19,193,1) 70%, rgba(121,93,255,1) 100%);
+		background: -webkit-linear-gradient(99deg, rgba(0,0,0,1) 36%, rgba(71,19,193,1) 70%, rgba(121,93,255,1) 100%);
+		background: linear-gradient(99deg, rgba(0,0,0,1) 36%, rgba(71,19,193,1) 70%, rgba(121,93,255,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#795dff",GradientType=1);
+				a {
 			text-decoration: none;
 			color: inherit;
 			transition: ${({ theme }) => theme.transitions.smoothShort};

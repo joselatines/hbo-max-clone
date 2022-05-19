@@ -7,13 +7,14 @@ import { getImage } from '../../utils/functions';
 MediaCard.propTypes = {
 	image: PropTypes.string,
 	id: PropTypes.number,
+	title: PropTypes.string,
 	redirect: PropTypes.bool,
 };
 
 MediaCard.defaultProps = {
 	redirect: true,
 };
-export default function MediaCard({ image, id, redirect, size }) {
+export default function MediaCard({ image, id, redirect, title }) {
 	return (
 		<>
 			{/* // Image exits => redirect? =>  Component */}
@@ -21,7 +22,7 @@ export default function MediaCard({ image, id, redirect, size }) {
 				<Link href={`/media/${id}`}>
 					<Container style={{ cursor: 'pointer' }} hover={redirect}>
 						<Image
-							alt={('movie-', id)}
+							alt={('media-', title)}
 							src={getImage(image)}
 							width={250}
 							height={400}
@@ -33,9 +34,10 @@ export default function MediaCard({ image, id, redirect, size }) {
 					<Image
 						src={getImage(image)}
 						alt={('movie-', id)}
-						width={10}
-						height={14}
+						width={8}
+						height={12}
 						layout='responsive'
+						objectFit='cover'
 					/>
 				</Container>
 			)}

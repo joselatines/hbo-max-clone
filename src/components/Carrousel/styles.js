@@ -13,6 +13,13 @@ export const Container = styled.div`
 			}
 		}
 	}
+
+	@media screen and (max-width: 40em) {
+		.swiper-button-next,
+		.swiper-button-prev {
+			display: none;
+		}
+	}
 	.swiper-button-next,
 	.swiper-button-prev {
 		transition: all ${({ theme }) => theme.transitions.smoothShort};

@@ -21,7 +21,7 @@ export default function RectangleCard({ title, txt, img }) {
 				<p>{txt}</p>
 				<Button>Watch</Button>
 			</div>
-			<Image src={img} alt='movie' width={550} height={320} />
+			<Image src={img} alt='movie' width={530} height={320} />
 		</Container>
 	);
 }

@@ -55,6 +55,7 @@ export default function Carrousel({ title, subtitle, elements }) {
 							<LazyMediaCard
 								image={el.poster_path}
 								id={el.id}
+								title={el.title ? el.title : el.name}
 								redirect={true}
 							/>
 						</SwiperSlide>
