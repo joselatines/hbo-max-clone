@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
-import overlay from '/public/img/mediaOverlay.png';
-import { Container, Overlay } from './styles';
+import { Container } from './styles';
 import { getImage } from '../../utils/functions';
 
 MediaCard.propTypes = {
@@ -14,23 +13,19 @@ MediaCard.propTypes = {
 MediaCard.defaultProps = {
 	redirect: true,
 };
-export default function MediaCard({ image, id, redirect }) {
+export default function MediaCard({ image, id, redirect, size }) {
 	return (
 		<>
 			{/* // Image exits => redirect? =>  Component */}
 			{image !== '' && redirect ? (
 				<Link href={`/media/${id}`}>
-					<Container style={{ cursor: 'pointer' }}>
+					<Container style={{ cursor: 'pointer' }} hover={redirect}>
 						<Image
 							alt={('movie-', id)}
 							src={getImage(image)}
 							width={250}
 							height={400}
-							objectFit='cover'
 						/>
-						<Overlay>
-							<Image src={overlay} alt={`overlay`} />
-						</Overlay>
 					</Container>
 				</Link>
 			) : (
@@ -38,9 +33,9 @@ export default function MediaCard({ image, id, redirect }) {
 					<Image
 						src={getImage(image)}
 						alt={('movie-', id)}
-						width={250}
-						height={400}
-						objectFit='cover'
+						width={10}
+						height={14}
+						layout='responsive'
 					/>
 				</Container>
 			)}

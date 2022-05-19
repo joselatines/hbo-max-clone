@@ -13,7 +13,7 @@ export default function Layout({ children }) {
 			<Footer />
 			<style jsx>{`
 				main {
-					padding: 60px; // Use [margin: -60px] for full screen images / elements
+					padding:  40px 60px; // Use [margin: -60px] for full screen images / elements
 					overflow-x: hidden; // This is for images full screen (ignoring padding body)
 					min-height: 90vh;
 				}

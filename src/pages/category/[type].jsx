@@ -57,6 +57,8 @@ export default function Category() {
 					display: flex;
 					flex-wrap: wrap;
 					gap: 1.3rem;
+					justify-content: center;
+					align-items: center;
 				}
 			`}</style>
 		</div>
