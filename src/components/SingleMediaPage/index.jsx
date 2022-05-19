@@ -9,7 +9,6 @@ const LazyMediaCard = dynamic(() => import('../MediaCard'), {
 });
 
 export default function SingleMediaPage({ mediaData }) {
-	console.log(mediaData);
 	const {
 		title,
 		original_title,
